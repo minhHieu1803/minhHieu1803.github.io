@@ -39,6 +39,7 @@
   <div class="wrap">
     <a class="brand" href="#top"><b><span lang="en">Pham Minh Hieu</span><span lang="vi">Phạm Minh Hiếu</span></b><span>@minhHieu1803</span></a>
     <nav class="nav" aria-label="Sections">
+      <a href="#about"><span lang="en">About</span><span lang="vi">Giới thiệu</span></a>
       <a href="#project"><span lang="en">Project</span><span lang="vi">Dự án</span></a>
       <a href="#skills"><span lang="en">Skills</span><span lang="vi">Kỹ năng</span></a>
       <a href="#education"><span lang="en">Education</span><span lang="vi">Học vấn</span></a>
@@ -59,6 +60,7 @@
   </div>
   <div class="mobile-menu" id="mobile-menu" hidden>
     <div class="wrap">
+      <a href="#about"><span lang="en">About</span><span lang="vi">Giới thiệu</span></a>
       <a href="#project"><span lang="en">Project</span><span lang="vi">Dự án</span></a>
       <a href="#skills"><span lang="en">Skills</span><span lang="vi">Kỹ năng</span></a>
       <a href="#education"><span lang="en">Education</span><span lang="vi">Học vấn</span></a>
@@ -73,10 +75,16 @@
   <section class="hero" id="top">
     <div class="wrap">
       <div>
-        <p class="eyebrow">
-          <span class="status"><span lang="en">Open to fresher roles</span><span lang="vi">Sẵn sàng nhận việc</span></span>
-          <span lang="en">Ho Chi Minh City</span><span lang="vi">TP. Hồ Chí Minh</span>
-        </p>
+        <div class="hero-id">
+          <picture>
+            <source srcset="/assets/img/hieu-avatar-192.webp" type="image/webp">
+            <img class="avatar" src="/assets/img/hieu-avatar-192.jpg" width="64" height="64" alt="Phạm Minh Hiếu">
+          </picture>
+          <p class="eyebrow">
+            <span class="status"><span lang="en">Open to fresher roles</span><span lang="vi">Sẵn sàng nhận việc</span></span>
+            <span lang="en">Ho Chi Minh City</span><span lang="vi">TP. Hồ Chí Minh</span>
+          </p>
+        </div>
         <h1><span lang="en">Pham Minh Hieu</span><span lang="vi">Phạm Minh Hiếu</span></h1>
         <p class="role"><span lang="en">Fresher Python Backend Developer</span><span lang="vi">Lập trình viên Python Backend (Fresher)</span></p>
         <p class="lead" lang="en">IT graduate and M.Sc. candidate at HUTECH. For my master's thesis I built a FastAPI service that runs a video-analysis pipeline as background jobs, covered by 100+ automated regression tests. I'm looking for a fresher backend role where I can learn how production systems are built and run.</p>
@@ -109,6 +117,37 @@
   <span class="k">"languages"</span><span class="p">: [</span><span class="s">"Vietnamese"</span><span class="p">,</span> <span class="s">"English (B1)"</span><span class="p">],</span>
   <span class="k">"open_to_work"</span><span class="p">:</span> <span class="l">true</span>
 <span class="p">}</span><span class="caret" aria-hidden="true"></span></code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section alt" id="about">
+    <div class="wrap about">
+      <figure class="about-photo">
+        <picture>
+          <source srcset="/assets/img/hieu-portrait-600.webp" type="image/webp">
+          <img src="/assets/img/hieu-portrait-600.jpg" width="600" height="750" alt="Phạm Minh Hiếu" loading="lazy">
+        </picture>
+      </figure>
+      <div class="about-text">
+        <p class="route"><span class="verb-tag">GET</span>/about</p>
+        <h2><span lang="en">About me</span><span lang="vi">Giới thiệu</span></h2>
+        <div lang="en">
+          <p>I'm Pham Minh Hieu, an IT graduate from HUTECH (2025), now doing a master's degree in IT. My thesis turned into a real backend problem: a FastAPI service that processes long videos in the background, keeps personal data on one machine, and produces numbers that can be traced back to the exact code and model.</p>
+          <p>Along the way I learned to measure before optimizing, to test against a real server instead of mocks, and to say clearly what a benchmark does and doesn't show.</p>
+          <p>I'm looking for a fresher Python backend role where I can learn how production systems are built and run: databases, deployment and code review in a team.</p>
+        </div>
+        <div lang="vi">
+          <p>Tôi là Phạm Minh Hiếu, tốt nghiệp ngành Công nghệ Thông tin tại HUTECH (2025) và đang học Thạc sĩ cùng ngành. Luận văn đưa tôi vào một bài toán backend thực sự: một dịch vụ FastAPI xử lý video dài dưới dạng tác vụ nền, giữ dữ liệu cá nhân trên một máy, và cho ra những con số truy ngược được về đúng mã nguồn và mô hình đã tạo ra chúng.</p>
+          <p>Qua đó tôi học được cách đo trước khi tối ưu, kiểm thử trên máy chủ thật thay vì giả lập, và nói rõ một benchmark cho thấy gì và không cho thấy gì.</p>
+          <p>Tôi đang tìm vị trí Fresher Python Backend để học cách xây dựng và vận hành hệ thống thực tế: cơ sở dữ liệu, triển khai và review code trong một nhóm.</p>
+        </div>
+        <ul class="facts">
+          <li><span lang="en">Ho Chi Minh City</span><span lang="vi">TP. Hồ Chí Minh</span></li>
+          <li><span lang="en">M.Sc. IT, HUTECH · expected 2027</span><span lang="vi">Thạc sĩ CNTT, HUTECH · dự kiến 2027</span></li>
+          <li><span lang="en">English B1</span><span lang="vi">Tiếng Anh B1</span></li>
+        </ul>
       </div>
     </div>
   </section>
