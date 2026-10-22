@@ -1,4 +1,5 @@
-/* Layout: a personal page read like API docs. Sticky top bar, hero = intro + a JSON response card,
+/* Layout: a personal page read like API docs. Sticky top bar, hero = intro + a cut-out portrait with
+   floating stack chips and a small JSON response card,
    then each section is an endpoint (method + route above a plain heading). One readable column, wide figures. */
 :root {
   --bg: #f4f6f9;
@@ -199,11 +200,18 @@ html[data-lang="vi"] body [lang="en"] { display: none !important; }
 .text-link:hover { border-bottom-color: var(--accent); color: var(--accent); }
 
 /* ---------- hero ---------- */
-.hero { padding-block: 64px 56px; }
+.hero {
+  padding-block: 48px 0; overflow: hidden;
+  background:
+    radial-gradient(42% 70% at 78% 55%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%),
+    radial-gradient(30% 45% at 12% 10%, var(--accent-soft), transparent 70%),
+    var(--bg);
+}
 .hero .wrap {
   display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: 48px; align-items: center;
+  gap: 32px; align-items: end;
 }
+.hero .wrap > div:first-child { padding-bottom: 72px; }
 .eyebrow {
   font-family: var(--font-mono); font-size: var(--step--1); color: var(--ink-2);
   letter-spacing: 0.02em; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center;
@@ -213,12 +221,8 @@ html[data-lang="vi"] body [lang="en"] { display: none !important; }
   content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ok);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--ok) 22%, transparent);
 }
-.hero-id { display: flex; align-items: center; gap: 14px; }
-.avatar {
-  width: 64px; height: 64px; border-radius: 50%; object-fit: cover; display: block; flex: none;
-  border: 2px solid var(--surface); box-shadow: 0 0 0 1px var(--line), 0 6px 16px -8px rgba(9, 20, 40, 0.35);
-}
-.hero h1 { font-size: var(--step-5); font-weight: 700; letter-spacing: -0.02em; margin-top: 14px; }
+.hello { margin-top: 22px; font-family: var(--font-display); font-weight: 600; font-size: var(--step-2); color: var(--ink-2); }
+.hero h1 { font-size: var(--step-5); font-weight: 700; letter-spacing: -0.02em; margin-top: 2px; }
 .hero .role { font-family: var(--font-display); font-weight: 600; font-size: var(--step-2); color: var(--accent); margin-top: 8px; }
 .hero .lead { margin-top: 18px; font-size: var(--step-1); color: var(--ink-2); max-width: 58ch; }
 .hero .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 28px; }
@@ -246,9 +250,63 @@ html[data-lang="vi"] body [lang="en"] { display: none !important; }
 @keyframes blink { 50% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .caret { animation: none; } }
 
+/* hero portrait: the cut-out stands on a glow, edges cut by the original frame fade out */
+.hero-visual { position: relative; isolation: isolate; display: flex; justify-content: center; min-width: 0; padding-top: 24px; }
+.hero-visual picture { display: block; width: 100%; display: flex; justify-content: center; }
+.hero-visual .stage {
+  position: absolute; z-index: -1; left: 50%; bottom: 0; transform: translateX(-50%);
+  width: min(420px, 96%); aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 50% 42%, color-mix(in srgb, var(--accent) 26%, var(--surface)) 0%, var(--accent-soft) 62%, transparent 72%);
+}
+.hero-visual .watermark {
+  position: absolute; z-index: -2; top: 4%; left: 50%; transform: translateX(-50%);
+  font-family: var(--font-display); font-weight: 700; font-size: clamp(3.25rem, 7vw, 6.25rem); line-height: 1;
+  letter-spacing: -0.03em; white-space: nowrap; user-select: none;
+  color: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+.hero-photo {
+  display: block; width: min(360px, 80%); height: auto;
+  -webkit-mask-image: linear-gradient(to bottom, #000 74%, transparent 100%), linear-gradient(to left, transparent 0, #000 16%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to bottom, #000 74%, transparent 100%), linear-gradient(to left, transparent 0, #000 16%);
+  mask-composite: intersect;
+}
+.float-chips { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; pointer-events: none; }
+.fc {
+  position: absolute; display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px; border-radius: 999px; white-space: nowrap;
+  font-family: var(--font-display); font-weight: 600; font-size: 0.875rem; color: var(--ink);
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 24px -14px rgba(9, 20, 40, 0.45);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  animation: bob 6s ease-in-out infinite;
+}
+.fc i { width: 10px; height: 10px; border-radius: 3px; background: var(--c); flex: none; }
+.fc-1 { top: 12%; left: 2%; }
+.fc-2 { top: 20%; right: 0; animation-delay: -1.2s; }
+.fc-3 { top: 44%; left: 0; animation-delay: -2.4s; }
+.fc-4 { top: 50%; right: 2%; animation-delay: -3.6s; }
+.fc-5 { top: 70%; right: 0; animation-delay: -4.8s; }
+.fc-6 { top: 30%; left: 6%; display: none; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@media (prefers-reduced-motion: reduce) { .fc { animation: none; } }
+.response.mini {
+  position: absolute; left: 0; bottom: 48px; width: min(270px, 64%);
+  font-size: 0.75rem; line-height: 1.6;
+}
+.response.mini .response-head { padding: 8px 12px; font-size: 0.72rem; }
+.response.mini pre { padding: 10px 12px 12px; }
+
 @media (max-width: 900px) {
-  .hero { padding-block: 40px 40px; }
-  .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .hero { padding-block: 32px 0; }
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .hero .wrap > div:first-child { padding-bottom: 0; }
+  .hero-photo { width: min(330px, 78%); }
+  .hero-visual .stage { width: min(360px, 92%); }
+  .fc { font-size: 0.8125rem; padding: 7px 12px; }
+  .fc-5 { display: none; }
+  .response.mini { bottom: 28px; width: min(230px, 62%); }
 }
 
 /* ---------- sections ---------- */
@@ -276,27 +334,13 @@ html[data-lang="vi"] body [lang="en"] { display: none !important; }
 }
 .section.alt .tags li { background: var(--bg); }
 
-/* about: photo + short story */
-.about {
-  display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
-  gap: 56px; align-items: center;
-}
-.about-photo { margin: 0; }
-.about-photo img {
-  display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover;
-  border-radius: 12px; border: 1px solid var(--line);
-  box-shadow: 0 18px 40px -26px rgba(9, 20, 40, 0.6);
-}
+/* about: short story; the photo lives in the hero */
 .about-text > div p { margin-top: 14px; color: var(--ink-2); font-size: var(--step-1); max-width: 62ch; }
 .about-text h2 { margin-bottom: 4px; }
 .facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 0; padding: 0; list-style: none; }
 .facts li {
   font-family: var(--font-mono); font-size: 0.8125rem; color: var(--ink-2);
   border: 1px solid var(--line); background: var(--bg); padding: 4px 10px; border-radius: 4px;
-}
-@media (max-width: 860px) {
-  .about { grid-template-columns: minmax(0, 1fr); gap: 28px; }
-  .about-photo { max-width: 260px; }
 }
 
 /* key figures */
