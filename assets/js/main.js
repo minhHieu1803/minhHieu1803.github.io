@@ -1,22 +1,14 @@
-// Language switch and copy-to-clipboard. The initial language is set by the inline script in <head>.
+// Language links and copy-to-clipboard. The page language comes from the URL (/ or /vi/), set by the inline script in <head>.
 (function () {
   var root = document.documentElement;
-  var buttons = document.querySelectorAll("[data-set-lang]");
+  var lang = root.getAttribute("data-lang");
 
-  function setLang(lang) {
-    root.setAttribute("data-lang", lang);
-    root.lang = lang;
-    buttons.forEach(function (b) {
-      b.setAttribute("aria-pressed", String(b.getAttribute("data-set-lang") === lang));
+  document.querySelectorAll("[data-lang-link]").forEach(function (a) {
+    if (a.getAttribute("data-lang-link") === lang) a.setAttribute("aria-current", "page");
+    // keep the reader on the same section when switching language
+    a.addEventListener("click", function () {
+      if (location.hash) a.setAttribute("href", a.getAttribute("href").split("#")[0] + location.hash);
     });
-    try { localStorage.setItem("lang", lang); } catch (e) {}
-  }
-
-  buttons.forEach(function (b) {
-    b.addEventListener("click", function () { setLang(b.getAttribute("data-set-lang")); });
-  });
-  buttons.forEach(function (b) {
-    b.setAttribute("aria-pressed", String(b.getAttribute("data-set-lang") === root.getAttribute("data-lang")));
   });
 
   function selectText(el) {

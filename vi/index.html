@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="vi" data-lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Phạm Minh Hiếu · Lập trình viên Python Backend</title>
+<meta name="description" content="Portfolio của Phạm Minh Hiếu, lập trình viên Python Backend (Fresher), học viên Thạc sĩ CNTT tại HUTECH. FastAPI, tác vụ nền, thị giác máy tính và kiểm thử tự động.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Phạm Minh Hiếu · Lập trình viên Python Backend">
+<meta property="og:description" content="Lập trình viên Python Backend (Fresher). Luận văn thạc sĩ: dịch vụ FastAPI chạy pipeline nhận dạng cảm xúc từ video dưới dạng tác vụ nền.">
+<meta name="theme-color" content="#f4f6f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c1118" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<script>
+  (function () {
+    var lang = /^\/vi(\/|$)/.test(location.pathname) ? "vi" : "en";
+    try {
+      var q = new URLSearchParams(location.search).get("lang");
+      if (q === "vi" && lang === "en") { location.replace("/vi/" + location.hash); return; }
+    } catch (e) {}
+    document.documentElement.setAttribute("data-lang", lang);
+    document.documentElement.lang = lang;
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="vi">Bỏ qua thanh điều hướng</span></a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top"><b><span lang="en">Pham Minh Hieu</span><span lang="vi">Phạm Minh Hiếu</span></b><span>@minhHieu1803</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#project"><span lang="en">Project</span><span lang="vi">Dự án</span></a>
+      <a href="#skills"><span lang="en">Skills</span><span lang="vi">Kỹ năng</span></a>
+      <a href="#education"><span lang="en">Education</span><span lang="vi">Học vấn</span></a>
+      <a href="#contact"><span lang="en">Contact</span><span lang="vi">Liên hệ</span></a>
+    </nav>
+    <nav class="lang" aria-label="Language / Ngôn ngữ">
+      <a href="/" hreflang="en" data-lang-link="en">EN</a>
+      <a href="/vi/" hreflang="vi" data-lang-link="vi">VI</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">
+          <span class="status"><span lang="en">Open to fresher roles</span><span lang="vi">Sẵn sàng nhận việc</span></span>
+          <span lang="en">Ho Chi Minh City</span><span lang="vi">TP. Hồ Chí Minh</span>
+        </p>
+        <h1><span lang="en">Pham Minh Hieu</span><span lang="vi">Phạm Minh Hiếu</span></h1>
+        <p class="role"><span lang="en">Fresher Python Backend Developer</span><span lang="vi">Lập trình viên Python Backend (Fresher)</span></p>
+        <p class="lead" lang="en">IT graduate and M.Sc. candidate at HUTECH. For my master's thesis I built a FastAPI service that runs a video-analysis pipeline as background jobs, covered by 100+ automated regression tests. I'm looking for a fresher backend role where I can learn how production systems are built and run.</p>
+        <p class="lead" lang="vi">Tốt nghiệp ngành Công nghệ Thông tin và đang học Thạc sĩ tại HUTECH. Trong luận văn, tôi xây dựng một dịch vụ FastAPI chạy pipeline phân tích video dưới dạng tác vụ nền, kèm hơn 100 bài kiểm thử hồi quy tự động. Tôi đang tìm vị trí Fresher Backend để học cách xây dựng và vận hành hệ thống thực tế.</p>
+        <div class="actions">
+          <a class="btn primary" lang="en" href="/cv/PhamMinhHieu_CV_Python_Backend_EN.pdf" download>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 2v8m0 0 3.2-3.2M8 10 4.8 6.8M2.5 13.5h11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download CV
+          </a>
+          <a class="btn primary" lang="vi" href="/cv/PhamMinhHieu_CV_Python_Backend_VI.pdf" download>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 2v8m0 0 3.2-3.2M8 10 4.8 6.8M2.5 13.5h11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Tải CV
+          </a>
+          <a class="btn" href="#project"><span lang="en">See the thesis project</span><span lang="vi">Xem dự án luận văn</span></a>
+          <a class="btn" href="https://github.com/minhHieu1803" target="_blank" rel="noopener">
+            GitHub
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 11 11 5m0 0H6m5 0v5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="response" aria-label="Profile summary as a JSON response">
+        <div class="response-head"><span class="verb">GET</span><span class="path">/api/v1/me</span><span class="code">200 OK</span></div>
+<pre><code><span class="p">{</span>
+  <span class="k">"name"</span><span class="p">:</span> <span class="s">"Pham Minh Hieu"</span><span class="p">,</span>
+  <span class="k">"role"</span><span class="p">:</span> <span class="s">"Fresher Python Backend Developer"</span><span class="p">,</span>
+  <span class="k">"location"</span><span class="p">:</span> <span class="s">"Ho Chi Minh City, VN"</span><span class="p">,</span>
+  <span class="k">"education"</span><span class="p">: {</span>
+    <span class="k">"msc_it"</span><span class="p">:</span> <span class="s">"HUTECH, expected 2027"</span><span class="p">,</span>
+    <span class="k">"bsc_it"</span><span class="p">:</span> <span class="s">"HUTECH, 2025"</span>
+  <span class="p">},</span>
+  <span class="k">"stack"</span><span class="p">: [</span><span class="s">"Python"</span><span class="p">,</span> <span class="s">"FastAPI"</span><span class="p">,</span> <span class="s">"OpenCV"</span><span class="p">,</span> <span class="s">"PyTorch"</span><span class="p">],</span>
+  <span class="k">"languages"</span><span class="p">: [</span><span class="s">"Vietnamese"</span><span class="p">,</span> <span class="s">"English (B1)"</span><span class="p">],</span>
+  <span class="k">"open_to_work"</span><span class="p">:</span> <span class="l">true</span>
+<span class="p">}</span><span class="caret" aria-hidden="true"></span></code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured project -->
+  <section class="section" id="project">
+    <div class="wrap">
+      <p class="route"><span class="verb-tag">GET</span>/projects/emotion-recognition</p>
+      <h2><span lang="en">Emotion recognition for public-service transaction videos</span><span lang="vi">Nhận dạng cảm xúc từ video giao dịch hành chính</span></h2>
+      <div class="meta">
+        <span><span lang="en">Master's thesis · HUTECH</span><span lang="vi">Luận văn Thạc sĩ · HUTECH</span></span>
+        <span><span lang="en">2026 – present</span><span lang="vi">2026 – nay</span></span>
+        <span class="private"><span lang="en">Source code is private while the thesis is in progress. Happy to walk through it in an interview.</span><span lang="vi">Mã nguồn để riêng tư trong thời gian làm luận văn. Tôi sẵn sàng trình bày chi tiết khi phỏng vấn.</span></span>
+      </div>
+      <p class="intro" lang="en">Transactions at one-stop public-service counters are recorded on video, with the participants' consent. The system finds the citizen's face in sampled frames, estimates their facial expression, builds an emotion timeline for each session, and tests whether those patterns relate to the citizen's satisfaction score.</p>
+      <p class="intro" lang="vi">Các giao dịch tại quầy một cửa được ghi hình với sự đồng ý của người tham gia. Hệ thống tìm khuôn mặt công dân trong các khung hình được lấy mẫu, nhận dạng biểu hiện cảm xúc, dựng dòng thời gian cảm xúc cho từng phiên và kiểm định xem các đặc trưng này có liên hệ với điểm hài lòng của công dân hay không.</p>
+      <ul class="tags" aria-label="Tech stack">
+        <li>Python</li><li>FastAPI</li><li>Uvicorn</li><li>OpenCV</li><li>ONNX Runtime</li><li>PyTorch</li><li>pandas</li><li>SciPy</li><li>HTML/CSS/JS</li>
+      </ul>
+
+      <div class="figures">
+        <div class="figure"><div class="num">35+</div><div class="label"><span lang="en">REST endpoints in the FastAPI backend</span><span lang="vi">REST endpoint trong backend FastAPI</span></div></div>
+        <div class="figure"><div class="num">6</div><div class="label"><span lang="en">open-source FER libraries benchmarked</span><span lang="vi">thư viện FER mã nguồn mở được so sánh</span></div></div>
+        <div class="figure"><div class="num"><span lang="en">2.44×</span><span lang="vi">2,44×</span></div><div class="label"><span lang="en">faster face detection, same face coverage</span><span lang="vi">tăng tốc phát hiện khuôn mặt, độ phủ giữ nguyên</span></div></div>
+        <div class="figure"><div class="num">100+</div><div class="label"><span lang="en">automated regression tests</span><span lang="vi">bài kiểm thử hồi quy tự động</span></div></div>
+      </div>
+
+      <div class="sub">
+        <h3><span lang="en">How it fits together</span><span lang="vi">Kiến trúc hệ thống</span></h3>
+        <p lang="en">The dashboard talks to a FastAPI app over HTTP/JSON. Long-running work goes to a background job queue, which runs the video pipeline and writes results to disk.</p>
+        <p lang="vi">Dashboard giao tiếp với ứng dụng FastAPI qua HTTP/JSON. Các tác vụ chạy lâu được đưa vào hàng đợi chạy nền; hàng đợi này chạy pipeline xử lý video và ghi kết quả ra đĩa.</p>
+        <ol class="flow" aria-label="Request flow">
+          <li class="node">
+            <div class="name">Dashboard</div>
+            <div class="what"><span lang="en">Single-page HTML/CSS/JS: upload videos, follow jobs, read results</span><span lang="vi">Một trang HTML/CSS/JS: tải video, theo dõi tác vụ, xem kết quả</span></div>
+            <span class="edge" aria-hidden="true"><i></i></span>
+          </li>
+          <li class="node core">
+            <div class="name">FastAPI</div>
+            <div class="what"><span lang="en">35+ REST endpoints for uploads, jobs, sessions, evaluation and analysis</span><span lang="vi">Hơn 35 REST endpoint cho tải lên, tác vụ, phiên, đánh giá và phân tích</span></div>
+            <span class="edge" aria-hidden="true"><i></i></span>
+          </li>
+          <li class="node">
+            <div class="name"><span lang="en">Job queue</span><span lang="vi">Hàng đợi tác vụ</span></div>
+            <div class="what"><span lang="en">Background worker thread; the API returns at once and the dashboard checks job status</span><span lang="vi">Luồng chạy nền; API trả về ngay, dashboard kiểm tra trạng thái tác vụ</span></div>
+            <span class="edge" aria-hidden="true"><i></i></span>
+          </li>
+          <li class="node">
+            <div class="name"><span lang="en">Results</span><span lang="vi">Kết quả</span></div>
+            <div class="what"><span lang="en">Per-session JSON/CSV with a provenance block</span><span lang="vi">JSON/CSV cho từng phiên, kèm khối thông tin tái lập</span></div>
+          </li>
+        </ol>
+
+        <ol class="pipeline" aria-label="Video pipeline">
+          <li><div class="name"><span lang="en">Frame sampling</span><span lang="vi">Lấy mẫu khung hình</span></div><div class="what"><span lang="en">OpenCV decodes only the sampled frames (4 per second)</span><span lang="vi">OpenCV chỉ giải mã các khung được lấy mẫu (4 khung/giây)</span></div></li>
+          <li><div class="name"><span lang="en">Face detection</span><span lang="vi">Phát hiện khuôn mặt</span></div><div class="what"><span lang="en">YuNet (ONNX) on frames downscaled to fit the face size</span><span lang="vi">YuNet (ONNX) trên khung hình thu nhỏ theo cỡ khuôn mặt</span></div></li>
+          <li><div class="name"><span lang="en">Citizen ROI + tracking</span><span lang="vi">Vùng công dân + bám đối tượng</span></div><div class="what"><span lang="en">Keeps the citizen, skips staff; Kalman filter + IoU, geometry only</span><span lang="vi">Giữ công dân, bỏ qua cán bộ; bộ lọc Kalman + IoU, chỉ dùng hình học</span></div></li>
+          <li><div class="name"><span lang="en">Face alignment</span><span lang="vi">Căn chỉnh khuôn mặt</span></div><div class="what"><span lang="en">Rotate, crop and resize in one affine warp</span><span lang="vi">Xoay, cắt và đổi cỡ trong một phép biến đổi affine</span></div></li>
+          <li><div class="name"><span lang="en">Emotion inference</span><span lang="vi">Nhận dạng cảm xúc</span></div><div class="what"><span lang="en">7 emotion classes per frame from 1 of 6 FER libraries</span><span lang="vi">7 lớp cảm xúc mỗi khung, từ 1 trong 6 thư viện FER</span></div></li>
+          <li><div class="name"><span lang="en">Emotion timeline</span><span lang="vi">Dòng thời gian cảm xúc</span></div><div class="what"><span lang="en">Smoothing and segments; face-loss gaps stay empty</span><span lang="vi">Làm mượt, phân đoạn; khoảng mất mặt để trống</span></div></li>
+          <li><div class="name"><span lang="en">Session features</span><span lang="vi">Đặc trưng cấp phiên</span></div><div class="what"><span lang="en">136 features per transaction session</span><span lang="vi">136 đặc trưng cho mỗi phiên giao dịch</span></div></li>
+          <li><div class="name"><span lang="en">Statistical tests</span><span lang="vi">Kiểm định thống kê</span></div><div class="what"><span lang="en">Spearman + Benjamini–Hochberg FDR against satisfaction scores</span><span lang="vi">Spearman + hiệu chỉnh Benjamini–Hochberg FDR với điểm hài lòng</span></div></li>
+        </ol>
+        <p class="caption"><span lang="en">Steps 01–07 run for each video; step 08 runs across all sessions.</span><span lang="vi">Bước 01–07 chạy cho từng video; bước 08 chạy trên toàn bộ các phiên.</span></p>
+      </div>
+
+      <div class="sub">
+        <h3><span lang="en">Engineering decisions</span><span lang="vi">Các quyết định kỹ thuật</span></h3>
+        <div class="decisions">
+          <article class="decision">
+            <h4><span lang="en">Long work runs outside the request</span><span lang="vi">Việc chạy lâu nằm ngoài request</span></h4>
+            <p lang="en">Processing a video takes far longer than an HTTP request should. Uploads go into an in-process job queue served by a background thread, so the API answers at once. It needs no Redis or Celery, which suits a tool that has to run on one local machine.</p>
+            <p lang="vi">Xử lý một video mất nhiều thời gian hơn mức một HTTP request nên chờ. Video tải lên được đưa vào hàng đợi trong tiến trình, do một luồng nền xử lý, nên API phản hồi ngay. Cách này không cần Redis hay Celery, phù hợp với công cụ phải chạy trên một máy cục bộ.</p>
+          </article>
+          <article class="decision">
+            <h4><span lang="en">Privacy by design</span><span lang="vi">Bảo vệ dữ liệu ngay từ thiết kế</span></h4>
+            <p lang="en">No face recognition and no face embeddings: the tracker follows the citizen by box geometry only. No audio is processed. The server listens on <code>127.0.0.1</code> by default and rejects unknown <code>Host</code> headers.</p>
+            <p lang="vi">Không nhận dạng danh tính, không trích xuất face embedding: bộ bám đối tượng chỉ dùng hình học của khung mặt. Không xử lý âm thanh. Máy chủ mặc định chỉ lắng nghe <code>127.0.0.1</code> và từ chối header <code>Host</code> lạ.</p>
+          </article>
+          <article class="decision">
+            <h4><span lang="en">Faster detection, same coverage</span><span lang="vi">Nhanh hơn mà không sót mặt</span></h4>
+            <p lang="en">YuNet is designed for images around 320 px, so frames are downscaled from the median face width while keeping faces at least 48 px wide. A self-check re-runs detection at full resolution on up to 20 missed frames. Result: 2.44× faster with the same face coverage.</p>
+            <p lang="vi">YuNet được thiết kế cho ảnh khoảng 320 px, nên khung hình được thu nhỏ theo bề rộng mặt trung vị, giữ khuôn mặt rộng từ 48 px trở lên. Bước tự kiểm tra dò lại ở độ phân giải gốc trên tối đa 20 khung bị sót. Kết quả: nhanh hơn 2,44 lần, độ phủ khuôn mặt không đổi.</p>
+          </article>
+          <article class="decision">
+            <h4><span lang="en">Missing data stays missing</span><span lang="vi">Thiếu dữ liệu thì để trống</span></h4>
+            <p lang="en">When the face is lost, the timeline keeps an empty gap instead of interpolating, and uncertain frames are marked "no conclusion". Session statistics only use what was actually observed.</p>
+            <p lang="vi">Khi mất khuôn mặt, dòng thời gian giữ khoảng trống thay vì nội suy, và khung không chắc chắn được đánh dấu "không kết luận". Thống kê cấp phiên chỉ dùng những gì thực sự quan sát được.</p>
+          </article>
+          <article class="decision">
+            <h4><span lang="en">Every number is traceable</span><span lang="vi">Mọi con số đều truy vết được</span></h4>
+            <p lang="en">Each report stores the git commit, library versions, SHA-256 of the model weights and a config hash, so any result can be traced back to the exact code and model that produced it.</p>
+            <p lang="vi">Mỗi báo cáo lưu commit git, phiên bản thư viện, SHA-256 của trọng số mô hình và mã băm cấu hình, nên mọi kết quả đều truy ngược được về đúng mã nguồn và mô hình đã tạo ra nó.</p>
+          </article>
+          <article class="decision">
+            <h4><span lang="en">Tests run against a real server</span><span lang="vi">Kiểm thử trên máy chủ thật</span></h4>
+            <p lang="en">The regression suite starts a real Uvicorn server on a random port, with synthetic data in a temporary folder. It never touches real data, needs no GPU, and finishes in about a minute.</p>
+            <p lang="vi">Bộ kiểm thử hồi quy khởi động một máy chủ Uvicorn thật trên cổng ngẫu nhiên, với dữ liệu tổng hợp trong thư mục tạm. Bộ kiểm thử không chạm vào dữ liệu thật, không cần GPU và chạy xong trong khoảng một phút.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="sub">
+        <h3><span lang="en">What the benchmark didn't show</span><span lang="vi">Điều benchmark không cho thấy</span></h3>
+        <p lang="en">RMN was the clear winner on FER2013 at 72.3%. On real footage closer to the thesis setting it dropped to second place, and LibreFace moved from fifth to third. A benchmark score alone is not enough to choose a model, so the thesis evaluates libraries on its own target footage and checks how much the conclusions change with the library chosen.</p>
+        <p lang="vi">RMN dẫn đầu rõ rệt trên FER2013 với 72,3%. Trên video thật gần với bối cảnh luận văn hơn, RMN tụt xuống thứ hai, còn LibreFace từ hạng năm lên hạng ba. Chỉ điểm benchmark thì chưa đủ để chọn mô hình, nên luận văn đánh giá các thư viện trên chính loại video mục tiêu và kiểm tra kết luận thay đổi bao nhiêu khi đổi thư viện.</p>
+
+        <figure class="viz" aria-labelledby="viz-title">
+          <figcaption id="viz-title"><span lang="en">Accuracy by library: FER2013 benchmark vs. real clips</span><span lang="vi">Độ chính xác theo thư viện: benchmark FER2013 so với clip thật</span></figcaption>
+          <div class="viz-legend">
+            <span><i class="key before" aria-hidden="true"></i><span lang="en">FER2013 PrivateTest (3,589 images)</span><span lang="vi">FER2013 PrivateTest (3.589 ảnh)</span></span>
+            <span><i class="key after" aria-hidden="true"></i><span lang="en">Real clips (8 public videos, 484 frames)</span><span lang="vi">Clip thật (8 video công khai, 484 khung hình)</span></span>
+          </div>
+          <div class="viz-plot">
+            <div class="viz-row" style="--fer:57.48;--real:65.3;--min:57.48;--max:65.3">
+              <div class="viz-name">POSTER V2</div>
+              <div class="viz-track"><span class="viz-link"></span><span class="dot before" tabindex="0" data-tip-en="POSTER V2 · FER2013: 57.5%" data-tip-vi="POSTER V2 · FER2013: 57,5%"></span><span class="dot after" tabindex="0" data-tip-en="POSTER V2 · real clips: 65.3%" data-tip-vi="POSTER V2 · clip thật: 65,3%"></span></div>
+              <div class="viz-vals"><span lang="en">57.5 → <b>65.3</b></span><span lang="vi">57,5 → <b>65,3</b></span></div>
+            </div>
+            <div class="viz-row" style="--fer:72.30;--real:64.0;--min:64.0;--max:72.30">
+              <div class="viz-name">RMN</div>
+              <div class="viz-track"><span class="viz-link"></span><span class="dot before" tabindex="0" data-tip-en="RMN · FER2013: 72.3%" data-tip-vi="RMN · FER2013: 72,3%"></span><span class="dot after" tabindex="0" data-tip-en="RMN · real clips: 64.0%" data-tip-vi="RMN · clip thật: 64,0%"></span></div>
+              <div class="viz-vals"><span lang="en">72.3 → <b>64.0</b></span><span lang="vi">72,3 → <b>64,0</b></span></div>
+            </div>
+            <div class="viz-row" style="--fer:51.85;--real:62.8;--min:51.85;--max:62.8">
+              <div class="viz-name">LibreFace</div>
+              <div class="viz-track"><span class="viz-link"></span><span class="dot before" tabindex="0" data-tip-en="LibreFace · FER2013: 51.9%" data-tip-vi="LibreFace · FER2013: 51,9%"></span><span class="dot after" tabindex="0" data-tip-en="LibreFace · real clips: 62.8%" data-tip-vi="LibreFace · clip thật: 62,8%"></span></div>
+              <div class="viz-vals"><span lang="en">51.9 → <b>62.8</b></span><span lang="vi">51,9 → <b>62,8</b></span></div>
+            </div>
+            <div class="viz-row" style="--fer:57.37;--real:57.6;--min:57.37;--max:57.6">
+              <div class="viz-name">EmotiEffLib</div>
+              <div class="viz-track"><span class="viz-link"></span><span class="dot before" tabindex="0" data-tip-en="EmotiEffLib · FER2013: 57.4%" data-tip-vi="EmotiEffLib · FER2013: 57,4%"></span><span class="dot after" tabindex="0" data-tip-en="EmotiEffLib · real clips: 57.6%" data-tip-vi="EmotiEffLib · clip thật: 57,6%"></span></div>
+              <div class="viz-vals"><span lang="en">57.4 → <b>57.6</b></span><span lang="vi">57,4 → <b>57,6</b></span></div>
+            </div>
+            <div class="viz-row" style="--fer:55.87;--real:53.1;--min:53.1;--max:55.87">
+              <div class="viz-name">DeepFace</div>
+              <div class="viz-track"><span class="viz-link"></span><span class="dot before" tabindex="0" data-tip-en="DeepFace · FER2013: 55.9%" data-tip-vi="DeepFace · FER2013: 55,9%"></span><span class="dot after" tabindex="0" data-tip-en="DeepFace · real clips: 53.1%" data-tip-vi="DeepFace · clip thật: 53,1%"></span></div>
+              <div class="viz-vals"><span lang="en">55.9 → <b>53.1</b></span><span lang="vi">55,9 → <b>53,1</b></span></div>
+            </div>
+            <div class="viz-row" style="--fer:48.51;--real:45.7;--min:45.7;--max:48.51">
+              <div class="viz-name">OpenFace 3.0</div>
+              <div class="viz-track"><span class="viz-link"></span><span class="dot before" tabindex="0" data-tip-en="OpenFace 3.0 · FER2013: 48.5%" data-tip-vi="OpenFace 3.0 · FER2013: 48,5%"></span><span class="dot after" tabindex="0" data-tip-en="OpenFace 3.0 · real clips: 45.7%" data-tip-vi="OpenFace 3.0 · clip thật: 45,7%"></span></div>
+              <div class="viz-vals"><span lang="en">48.5 → <b>45.7</b></span><span lang="vi">48,5 → <b>45,7</b></span></div>
+            </div>
+            <div class="viz-axis" aria-hidden="true">
+              <div></div>
+              <div class="ticks"><span style="left:0%">40</span><span style="left:28.571%">50</span><span style="left:57.143%">60</span><span style="left:85.714%">70</span></div>
+              <div class="unit"><span lang="en">accuracy, %</span><span lang="vi">độ chính xác, %</span></div>
+            </div>
+          </div>
+          <p class="viz-note" lang="en">Real clips are 8 public Pexels videos of Asian faces with one label per video, so this is a weak measure; accuracy is the share of frames that match the video's label. Rows are sorted by real-clip accuracy.</p>
+          <p class="viz-note" lang="vi">Clip thật gồm 8 video công khai trên Pexels, khuôn mặt người châu Á, mỗi video một nhãn, nên đây là thước đo yếu; độ chính xác là tỉ lệ khung hình khớp với nhãn của video. Các dòng được sắp theo độ chính xác trên clip thật.</p>
+          <details>
+            <summary><span lang="en">Show as a table</span><span lang="vi">Xem dạng bảng</span></summary>
+            <div class="table-scroll">
+              <table>
+                <thead><tr><th><span lang="en">Library</span><span lang="vi">Thư viện</span></th><th class="n">FER2013 (%)</th><th class="n"><span lang="en">Real clips (%)</span><span lang="vi">Clip thật (%)</span></th></tr></thead>
+                <tbody>
+                  <tr><td>POSTER V2</td><td class="n">57.48</td><td class="n">65.3</td></tr>
+                  <tr><td>RMN</td><td class="n">72.30</td><td class="n">64.0</td></tr>
+                  <tr><td>LibreFace</td><td class="n">51.85</td><td class="n">62.8</td></tr>
+                  <tr><td>EmotiEffLib</td><td class="n">57.37</td><td class="n">57.6</td></tr>
+                  <tr><td>DeepFace</td><td class="n">55.87</td><td class="n">53.1</td></tr>
+                  <tr><td>OpenFace 3.0</td><td class="n">48.51</td><td class="n">45.7</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other projects -->
+  <section class="section alt" id="other">
+    <div class="wrap">
+      <p class="route"><span class="verb-tag">GET</span>/projects?type=academic</p>
+      <h2><span lang="en">Other projects</span><span lang="vi">Dự án khác</span></h2>
+      <article class="project-card">
+        <div>
+          <h3><span lang="en">Food search and selection website</span><span lang="vi">Website tìm kiếm và lựa chọn món ăn</span></h3>
+          <p class="when"><span lang="en">Mar – Jun 2023 · academic team project</span><span lang="vi">03/2023 – 06/2023 · dự án nhóm môn học</span></p>
+          <ul class="tags"><li>MVC</li><li>SQL</li><li>Git/GitHub</li></ul>
+        </div>
+        <ul class="points" lang="en">
+          <li>Developed data-processing functions and database connectivity following the MVC architecture.</li>
+          <li>Built a responsive user interface for searching and selecting dishes.</li>
+          <li>Worked with teammates on feature development and managed source code with Git and GitHub.</li>
+        </ul>
+        <ul class="points" lang="vi">
+          <li>Phát triển các hàm xử lý dữ liệu và kết nối cơ sở dữ liệu theo kiến trúc MVC.</li>
+          <li>Xây dựng giao diện responsive cho chức năng tìm kiếm và lựa chọn món ăn.</li>
+          <li>Phối hợp với các thành viên trong nhóm phát triển tính năng và quản lý mã nguồn bằng Git, GitHub.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section" id="skills">
+    <div class="wrap">
+      <p class="route"><span class="verb-tag">GET</span>/skills</p>
+      <h2><span lang="en">Skills</span><span lang="vi">Kỹ năng</span></h2>
+      <p class="intro" lang="en">Grouped by area. The last row is what I have practised in coursework and self-study but not yet used in a project.</p>
+      <p class="intro" lang="vi">Chia theo lĩnh vực. Dòng cuối là những công nghệ tôi đã làm quen qua môn học và tự học nhưng chưa dùng trong dự án.</p>
+      <dl class="skills">
+        <dt>Programming Languages</dt>
+        <dd><ul class="chips"><li>Python</li><li>SQL</li><li>JavaScript</li><li>HTML/CSS</li></ul></dd>
+        <dt>Backend &amp; API</dt>
+        <dd><ul class="chips"><li>FastAPI</li><li>Uvicorn</li><li>RESTful API</li><li>HTTP/JSON</li><li>Multithreading</li></ul></dd>
+        <dt>AI &amp; Computer Vision</dt>
+        <dd><ul class="chips"><li>OpenCV</li><li>PyTorch</li><li>ONNX Runtime</li></ul></dd>
+        <dt>Data Processing</dt>
+        <dd><ul class="chips"><li>NumPy</li><li>pandas</li><li>SciPy</li><li>scikit-learn</li></ul></dd>
+        <dt>Testing &amp; Tools</dt>
+        <dd><ul class="chips"><li>unittest</li><li>Git</li><li>GitHub</li><li>Conda</li><li>VS Code</li><li>Postman</li></ul></dd>
+        <dt>Familiar With<small><span lang="en">Coursework &amp; self-study</span><span lang="vi">Môn học &amp; tự học</span></small></dt>
+        <dd><ul class="chips familiar"><li>PostgreSQL</li><li>SQLAlchemy</li><li>Pydantic</li><li>JWT/OAuth2</li><li>Pytest</li><li>Docker</li><li>Docker Compose</li><li>Linux</li><li>Streamlit</li></ul></dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="section alt" id="education">
+    <div class="wrap">
+      <p class="route"><span class="verb-tag">GET</span>/education</p>
+      <h2><span lang="en">Education</span><span lang="vi">Học vấn</span></h2>
+      <ol class="timeline">
+        <li>
+          <p class="date"><span lang="en">Expected 2027</span><span lang="vi">Dự kiến 2027</span></p>
+          <h3><span lang="en">Master of Information Technology</span><span lang="vi">Thạc sĩ Công nghệ Thông tin</span></h3>
+          <p class="where"><span lang="en">HUTECH University, Ho Chi Minh City</span><span lang="vi">Trường Đại học Công nghệ TP. Hồ Chí Minh (HUTECH)</span></p>
+          <p class="detail"><span lang="en">Thesis: Research and application of deep learning for emotion recognition in public administrative transaction videos</span><span lang="vi">Luận văn: Nghiên cứu và ứng dụng phương pháp học sâu trong nhận dạng cảm xúc từ video giao dịch hành chính</span></p>
+        </li>
+        <li>
+          <p class="date">2025</p>
+          <h3><span lang="en">Bachelor of Information Technology</span><span lang="vi">Cử nhân Công nghệ Thông tin</span></h3>
+          <p class="where"><span lang="en">HUTECH University, Ho Chi Minh City</span><span lang="vi">Trường Đại học Công nghệ TP. Hồ Chí Minh (HUTECH)</span></p>
+        </li>
+      </ol>
+      <div class="extras">
+        <div class="extra">
+          <p class="label"><span lang="en">Achievement</span><span lang="vi">Thành tích</span></p>
+          <p><span lang="en">Top 3, CODE YOUR FUTURE competition by CJ</span><span lang="vi">Top 3 cuộc thi CODE YOUR FUTURE do CJ tổ chức</span></p>
+        </div>
+        <div class="extra">
+          <p class="label"><span lang="en">Languages</span><span lang="vi">Ngoại ngữ</span></p>
+          <p><span lang="en">Vietnamese (native) · English (B1 certificate)</span><span lang="vi">Tiếng Việt (bản ngữ) · Tiếng Anh (chứng chỉ B1)</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact" id="contact">
+    <div class="wrap">
+      <p class="route"><span class="verb-tag post">POST</span>/contact</p>
+      <h2><span lang="en">Let's talk about a fresher backend role</span><span lang="vi">Trao đổi về vị trí Fresher Backend</span></h2>
+      <p class="intro" lang="en">Email is the fastest way to reach me. My CV is available in English and Vietnamese.</p>
+      <p class="intro" lang="vi">Email là cách nhanh nhất để liên hệ với tôi. CV có cả bản tiếng Anh và tiếng Việt.</p>
+      <div class="contact-grid">
+        <div class="mailbox">
+          <span class="prompt">$ mail</span>
+          <span class="addr" id="email-addr">phamhieu5434@gmail.com</span>
+          <button type="button" class="btn" id="copy-email" data-copy="phamhieu5434@gmail.com" aria-controls="email-addr">
+            <span class="idle"><span lang="en">Copy</span><span lang="vi">Sao chép</span></span>
+            <span class="done"><span lang="en">Copied</span><span lang="vi">Đã chép</span></span>
+          </button>
+        </div>
+        <ul class="links">
+          <li><a href="mailto:phamhieu5434@gmail.com"><span><span lang="en">Send an email</span><span lang="vi">Gửi email</span></span><span class="hint">mailto</span></a></li>
+          <li><a href="https://github.com/minhHieu1803" target="_blank" rel="noopener"><span>GitHub</span><span class="hint">github.com/minhHieu1803</span></a></li>
+          <li><a href="/cv/PhamMinhHieu_CV_Python_Backend_EN.pdf" download><span>CV (English)</span><span class="hint">PDF</span></a></li>
+          <li><a href="/cv/PhamMinhHieu_CV_Python_Backend_VI.pdf" download><span>CV (Tiếng Việt)</span><span class="hint">PDF</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Pham Minh Hieu</span>
+    <span><span lang="en">Plain HTML, CSS and JavaScript · hosted on GitHub Pages</span><span lang="vi">HTML, CSS và JavaScript thuần · lưu trữ trên GitHub Pages</span></span>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

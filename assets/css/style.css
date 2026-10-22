@@ -145,11 +145,9 @@ html[data-lang="vi"] body [lang="en"] { display: none !important; }
   display: inline-flex; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
   font-family: var(--font-mono); font-size: var(--step--1);
 }
-.lang button {
-  appearance: none; border: 0; background: transparent; color: var(--ink-2);
-  padding: 6px 10px; cursor: pointer; font: inherit;
-}
-.lang button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.lang a { color: var(--ink-2); text-decoration: none; padding: 6px 10px; }
+.lang a:hover { color: var(--ink); background: var(--surface-2); }
+.lang a[aria-current="page"] { background: var(--ink); color: var(--bg); }
 @media (max-width: 760px) {
   .nav { display: none; }
   .lang { margin-left: auto; }

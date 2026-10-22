@@ -8,19 +8,15 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Pham Minh Hieu · Python Backend Developer">
 <meta property="og:description" content="Fresher Python backend developer. Master's thesis: a FastAPI service that runs a video emotion-recognition pipeline as background jobs.">
-<meta property="og:url" content="https://minhhieu1803.github.io/">
 <meta name="theme-color" content="#f4f6f9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0c1118" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <script>
   (function () {
-    var lang = "en";
+    var lang = /^\/vi(\/|$)/.test(location.pathname) ? "vi" : "en";
     try {
       var q = new URLSearchParams(location.search).get("lang");
-      var saved = localStorage.getItem("lang");
-      if (q === "vi" || q === "en") lang = q;
-      else if (saved === "vi" || saved === "en") lang = saved;
-      else if ((navigator.language || "").toLowerCase().indexOf("vi") === 0) lang = "vi";
+      if (q === "vi" && lang === "en") { location.replace("/vi/" + location.hash); return; }
     } catch (e) {}
     document.documentElement.setAttribute("data-lang", lang);
     document.documentElement.lang = lang;
@@ -29,24 +25,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
 <a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="vi">Bỏ qua thanh điều hướng</span></a>
 
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="#top"><b>Pham Minh Hieu</b><span>@minhHieu1803</span></a>
+    <a class="brand" href="#top"><b><span lang="en">Pham Minh Hieu</span><span lang="vi">Phạm Minh Hiếu</span></b><span>@minhHieu1803</span></a>
     <nav class="nav" aria-label="Sections">
       <a href="#project"><span lang="en">Project</span><span lang="vi">Dự án</span></a>
       <a href="#skills"><span lang="en">Skills</span><span lang="vi">Kỹ năng</span></a>
       <a href="#education"><span lang="en">Education</span><span lang="vi">Học vấn</span></a>
       <a href="#contact"><span lang="en">Contact</span><span lang="vi">Liên hệ</span></a>
     </nav>
-    <div class="lang" role="group" aria-label="Language / Ngôn ngữ">
-      <button type="button" id="lang-en" data-set-lang="en" aria-pressed="true">EN</button>
-      <button type="button" id="lang-vi" data-set-lang="vi" aria-pressed="false">VI</button>
-    </div>
+    <nav class="lang" aria-label="Language / Ngôn ngữ">
+      <a href="/" hreflang="en" data-lang-link="en">EN</a>
+      <a href="/vi/" hreflang="vi" data-lang-link="vi">VI</a>
+    </nav>
   </div>
 </header>
 
@@ -65,11 +61,11 @@
         <p class="lead" lang="en">IT graduate and M.Sc. candidate at HUTECH. For my master's thesis I built a FastAPI service that runs a video-analysis pipeline as background jobs, covered by 100+ automated regression tests. I'm looking for a fresher backend role where I can learn how production systems are built and run.</p>
         <p class="lead" lang="vi">Tốt nghiệp ngành Công nghệ Thông tin và đang học Thạc sĩ tại HUTECH. Trong luận văn, tôi xây dựng một dịch vụ FastAPI chạy pipeline phân tích video dưới dạng tác vụ nền, kèm hơn 100 bài kiểm thử hồi quy tự động. Tôi đang tìm vị trí Fresher Backend để học cách xây dựng và vận hành hệ thống thực tế.</p>
         <div class="actions">
-          <a class="btn primary" lang="en" href="cv/PhamMinhHieu_CV_Python_Backend_EN.pdf" download>
+          <a class="btn primary" lang="en" href="/cv/PhamMinhHieu_CV_Python_Backend_EN.pdf" download>
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 2v8m0 0 3.2-3.2M8 10 4.8 6.8M2.5 13.5h11" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Download CV
           </a>
-          <a class="btn primary" lang="vi" href="cv/PhamMinhHieu_CV_Python_Backend_VI.pdf" download>
+          <a class="btn primary" lang="vi" href="/cv/PhamMinhHieu_CV_Python_Backend_VI.pdf" download>
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 2v8m0 0 3.2-3.2M8 10 4.8 6.8M2.5 13.5h11" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Tải CV
           </a>
@@ -367,8 +363,8 @@
         <ul class="links">
           <li><a href="mailto:phamhieu5434@gmail.com"><span><span lang="en">Send an email</span><span lang="vi">Gửi email</span></span><span class="hint">mailto</span></a></li>
           <li><a href="https://github.com/minhHieu1803" target="_blank" rel="noopener"><span>GitHub</span><span class="hint">github.com/minhHieu1803</span></a></li>
-          <li><a href="cv/PhamMinhHieu_CV_Python_Backend_EN.pdf" download><span>CV (English)</span><span class="hint">PDF</span></a></li>
-          <li><a href="cv/PhamMinhHieu_CV_Python_Backend_VI.pdf" download><span>CV (Tiếng Việt)</span><span class="hint">PDF</span></a></li>
+          <li><a href="/cv/PhamMinhHieu_CV_Python_Backend_EN.pdf" download><span>CV (English)</span><span class="hint">PDF</span></a></li>
+          <li><a href="/cv/PhamMinhHieu_CV_Python_Backend_VI.pdf" download><span>CV (Tiếng Việt)</span><span class="hint">PDF</span></a></li>
         </ul>
       </div>
     </div>
@@ -382,6 +378,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>
