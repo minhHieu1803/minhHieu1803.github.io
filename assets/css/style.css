@@ -339,7 +339,6 @@ html[data-lang="vi"] body [lang="en"] { display: none !important; }
 
 .meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; color: var(--ink-2); font-size: 0.9375rem; }
 .meta .private { color: var(--ink-3); }
-.request { margin-top: 16px; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; padding: 0; list-style: none; }
 .tags li {
   font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-2);
