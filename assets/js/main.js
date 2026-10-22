@@ -23,7 +23,7 @@
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && !menu.hidden) { setMenu(false); menuBtn.focus(); }
     });
-    var wide = window.matchMedia("(min-width: 761px)");
+    var wide = window.matchMedia("(min-width: 901px)");
     var onWide = function (e) { if (e.matches) setMenu(false); };
     if (wide.addEventListener) wide.addEventListener("change", onWide); else wide.addListener(onWide);
   }

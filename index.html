@@ -65,6 +65,8 @@
       <a href="#skills"><span lang="en">Skills</span><span lang="vi">Kỹ năng</span></a>
       <a href="#education"><span lang="en">Education</span><span lang="vi">Học vấn</span></a>
       <a href="#contact"><span lang="en">Contact</span><span lang="vi">Liên hệ</span></a>
+      <a lang="en" href="/cv/PhamMinhHieu_CV_Python_Backend_EN.pdf" download>Download CV (PDF)</a>
+      <a lang="vi" href="/cv/PhamMinhHieu_CV_Python_Backend_VI.pdf" download>Tải CV (PDF)</a>
     </div>
   </div>
 </header>
@@ -79,7 +81,6 @@
           <span class="status"><span lang="en">Open to fresher roles</span><span lang="vi">Sẵn sàng nhận việc</span></span>
           <span lang="en">Ho Chi Minh City</span><span lang="vi">TP. Hồ Chí Minh</span>
         </p>
-        <p class="hello"><span lang="en">Hi, I'm</span><span lang="vi">Xin chào, tôi là</span></p>
         <h1><span lang="en">Pham Minh Hieu</span><span lang="vi">Phạm Minh Hiếu</span></h1>
         <p class="role"><span lang="en">Fresher Python Backend Developer</span><span lang="vi">Lập trình viên Python Backend (Fresher)</span></p>
         <p class="lead" lang="en">IT graduate and M.Sc. candidate at HUTECH. For my master's thesis I built a FastAPI service that runs a video-analysis pipeline as background jobs, covered by 100+ automated regression tests. I'm looking for a fresher backend role where I can learn how production systems are built and run.</p>
@@ -99,28 +100,29 @@
       </div>
 
       <div class="hero-visual">
-        <span class="stage" aria-hidden="true"></span>
-        <span class="watermark" aria-hidden="true">BACKEND</span>
-        <picture>
-          <source srcset="/assets/img/hieu-hero-900.webp" type="image/webp">
-          <img class="hero-photo" src="/assets/img/hieu-hero-900.png" width="900" height="1470" alt="Phạm Minh Hiếu" fetchpriority="high">
-        </picture>
-        <ul class="float-chips" aria-label="Tech stack">
-          <li class="fc fc-1"><i style="--c: #3572a5"></i>Python</li>
-          <li class="fc fc-2"><i style="--c: #059b8a"></i>FastAPI</li>
-          <li class="fc fc-3"><i style="--c: #5c3ee8"></i>OpenCV</li>
-          <li class="fc fc-4"><i style="--c: #ee4c2c"></i>PyTorch</li>
-          <li class="fc fc-5"><i style="--c: var(--signal)"></i>REST API</li>
-          <li class="fc fc-6"><i style="--c: var(--ok)"></i><span lang="en">100+ tests</span><span lang="vi">100+ bài test</span></li>
-        </ul>
-        <div class="response mini" aria-label="Profile summary as a JSON response">
-          <div class="response-head"><span class="verb">GET</span><span class="path">/api/v1/me</span><span class="code">200 OK</span></div>
-<pre><code><span class="p">{</span>
+        <figure class="profile-window" aria-label="Profile summary as an API response">
+          <div class="pw-head">
+            <span class="verb">GET</span><span class="path">/api/v1/me</span><span class="code">200 OK</span>
+          </div>
+          <div class="pw-body">
+            <div class="pw-photo">
+              <picture>
+                <source srcset="/assets/img/hieu-hero-900.webp" type="image/webp">
+                <img src="/assets/img/hieu-hero-900.png" width="900" height="1470" alt="Phạm Minh Hiếu" fetchpriority="high">
+              </picture>
+            </div>
+<pre class="pw-json"><code><span class="p">{</span>
   <span class="k">"role"</span><span class="p">:</span> <span class="s">"backend"</span><span class="p">,</span>
-  <span class="k">"stack"</span><span class="p">: [</span><span class="s">"Python"</span><span class="p">,</span> <span class="s">"FastAPI"</span><span class="p">],</span>
+  <span class="k">"level"</span><span class="p">:</span> <span class="s">"fresher"</span><span class="p">,</span>
+  <span class="k">"stack"</span><span class="p">: [</span>
+    <span class="s">"Python"</span><span class="p">,</span>
+    <span class="s">"FastAPI"</span><span class="p">,</span>
+    <span class="s">"OpenCV"</span>
+  <span class="p">],</span>
   <span class="k">"open_to_work"</span><span class="p">:</span> <span class="l">true</span>
 <span class="p">}</span><span class="caret" aria-hidden="true"></span></code></pre>
-        </div>
+          </div>
+        </figure>
       </div>
     </div>
   </section>

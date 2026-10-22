@@ -1,5 +1,5 @@
-/* Layout: a personal page read like API docs. Sticky top bar, hero = intro + a cut-out portrait with
-   floating stack chips and a small JSON response card,
+/* Layout: a personal page read like API docs. Sticky top bar, hero = intro + a "profile window":
+   the GET /api/v1/me response, with the cut-out portrait stepping out of its top edge,
    then each section is an endpoint (method + route above a plain heading). One readable column, wide figures. */
 :root {
   --bg: #f4f6f9;
@@ -171,13 +171,17 @@ html[data-lang="vi"] body [lang="en"] { display: none !important; }
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .nav { display: none; }
   .top-actions { margin-left: auto; gap: 8px; }
   .menu-btn { display: inline-flex; }
 }
 @media (max-width: 480px) {
   .brand > span { display: none; }
+}
+@media (max-width: 400px) {
+  .topbar .wrap { gap: 12px; }
+  .top-actions > a.btn { display: none; }   /* the CV link is in the menu and in the hero */
 }
 
 /* ---------- buttons ---------- */
@@ -201,7 +205,7 @@ html[data-lang="vi"] body [lang="en"] { display: none !important; }
 
 /* ---------- hero ---------- */
 .hero {
-  padding-block: 48px 0; overflow: hidden;
+  padding-block: 40px 64px; overflow: hidden;
   background:
     radial-gradient(42% 70% at 78% 55%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%),
     radial-gradient(30% 45% at 12% 10%, var(--accent-soft), transparent 70%),
@@ -211,7 +215,7 @@ html[data-lang="vi"] body [lang="en"] { display: none !important; }
   display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: 32px; align-items: end;
 }
-.hero .wrap > div:first-child { padding-bottom: 72px; }
+.hero .wrap > div:first-child { padding-bottom: 8px; }
 .eyebrow {
   font-family: var(--font-mono); font-size: var(--step--1); color: var(--ink-2);
   letter-spacing: 0.02em; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center;
@@ -221,8 +225,7 @@ html[data-lang="vi"] body [lang="en"] { display: none !important; }
   content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ok);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--ok) 22%, transparent);
 }
-.hello { margin-top: 22px; font-family: var(--font-display); font-weight: 600; font-size: var(--step-2); color: var(--ink-2); }
-.hero h1 { font-size: var(--step-5); font-weight: 700; letter-spacing: -0.02em; margin-top: 2px; }
+.hero h1 { font-size: var(--step-5); font-weight: 700; letter-spacing: -0.02em; margin-top: 14px; }
 .hero .role { font-family: var(--font-display); font-weight: 600; font-size: var(--step-2); color: var(--accent); margin-top: 8px; }
 .hero .lead { margin-top: 18px; font-size: var(--step-1); color: var(--ink-2); max-width: 58ch; }
 .hero .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 28px; }
@@ -250,63 +253,73 @@ html[data-lang="vi"] body [lang="en"] { display: none !important; }
 @keyframes blink { 50% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .caret { animation: none; } }
 
-/* hero portrait: the cut-out stands on a glow, edges cut by the original frame fade out */
-.hero-visual { position: relative; isolation: isolate; display: flex; justify-content: center; min-width: 0; padding-top: 24px; }
-.hero-visual picture { display: block; width: 100%; display: flex; justify-content: center; }
-.hero-visual .stage {
-  position: absolute; z-index: -1; left: 50%; bottom: 0; transform: translateX(-50%);
-  width: min(420px, 96%); aspect-ratio: 1; border-radius: 50%;
-  background: radial-gradient(circle at 50% 42%, color-mix(in srgb, var(--accent) 26%, var(--surface)) 0%, var(--accent-soft) 62%, transparent 72%);
+/* hero visual: the profile is the API response. The cut-out sits inside a dark code window and
+   its head rises above the window's top edge; the window clips it at the sides and bottom. */
+.hero-visual { position: relative; min-width: 0; padding-top: 112px; }
+.profile-window {
+  position: relative; margin: 0; isolation: isolate;
+  background: var(--code-bg); color: var(--code-ink); border-radius: 14px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset, 0 28px 60px -32px rgba(9, 20, 40, 0.7);
 }
-.hero-visual .watermark {
-  position: absolute; z-index: -2; top: 4%; left: 50%; transform: translateX(-50%);
-  font-family: var(--font-display); font-weight: 700; font-size: clamp(3.25rem, 7vw, 6.25rem); line-height: 1;
-  letter-spacing: -0.03em; white-space: nowrap; user-select: none;
-  color: color-mix(in srgb, var(--accent) 10%, transparent);
+.profile-window::before {
+  /* soft light behind the head, so dark hair separates from the page and from the window */
+  content: ""; position: absolute; z-index: -1; left: 0; top: -130px; width: 64%; aspect-ratio: 1;
+  border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 32%, transparent), transparent 66%);
 }
-.hero-photo {
-  display: block; width: min(360px, 80%); height: auto;
-  -webkit-mask-image: linear-gradient(to bottom, #000 74%, transparent 100%), linear-gradient(to left, transparent 0, #000 16%);
-  -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to bottom, #000 74%, transparent 100%), linear-gradient(to left, transparent 0, #000 16%);
-  mask-composite: intersect;
+.pw-head {
+  position: relative; display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-family: var(--font-mono); font-size: 0.8rem;
 }
-.float-chips { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; pointer-events: none; }
-.fc {
-  position: absolute; display: inline-flex; align-items: center; gap: 8px;
-  padding: 8px 14px; border-radius: 999px; white-space: nowrap;
-  font-family: var(--font-display); font-weight: 600; font-size: 0.875rem; color: var(--ink);
-  background: color-mix(in srgb, var(--surface) 90%, transparent);
-  border: 1px solid var(--line);
-  box-shadow: 0 10px 24px -14px rgba(9, 20, 40, 0.45);
-  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-  animation: bob 6s ease-in-out infinite;
+.pw-head .verb { color: #0f1722; background: #f0c27a; font-weight: 700; padding: 2px 7px; border-radius: 4px; margin-left: auto; }
+.pw-head .path { color: #e7ecf3; }
+.pw-head .code { color: #86d6a6; }
+.pw-body { position: relative; min-height: 320px; display: flex; align-items: center; }
+.pw-photo {
+  /* anchored to the window floor; free to rise above the window, cut only at the floor */
+  position: absolute; z-index: 2; left: 4%; bottom: 0; width: 56%;
+  clip-path: inset(-600px -200px 0 -200px);
+  pointer-events: none;
 }
-.fc i { width: 10px; height: 10px; border-radius: 3px; background: var(--c); flex: none; }
-.fc-1 { top: 12%; left: 2%; }
-.fc-2 { top: 20%; right: 0; animation-delay: -1.2s; }
-.fc-3 { top: 44%; left: 0; animation-delay: -2.4s; }
-.fc-4 { top: 50%; right: 2%; animation-delay: -3.6s; }
-.fc-5 { top: 70%; right: 0; animation-delay: -4.8s; }
-.fc-6 { top: 30%; left: 6%; display: none; }
-@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-@media (prefers-reduced-motion: reduce) { .fc { animation: none; } }
-.response.mini {
-  position: absolute; left: 0; bottom: 48px; width: min(270px, 64%);
-  font-size: 0.75rem; line-height: 1.6;
+.pw-photo::before {
+  /* light inside the window, behind the shoulders */
+  content: ""; position: absolute; z-index: -1; left: -6%; right: -6%; bottom: 0; height: 62%;
+  background: radial-gradient(60% 70% at 45% 70%, color-mix(in srgb, var(--accent) 24%, transparent), transparent 72%);
 }
-.response.mini .response-head { padding: 8px 12px; font-size: 0.72rem; }
-.response.mini pre { padding: 10px 12px 12px; }
+.pw-photo picture { display: block; }
+.pw-photo img {
+  display: block; width: 100%; height: auto;
+  -webkit-mask-image: linear-gradient(to left, transparent 0, #000 18%);
+  mask-image: linear-gradient(to left, transparent 0, #000 18%);
+}
+.pw-json {
+  margin: 0 0 0 57%; padding: 22px 18px 24px 4px; overflow-x: auto; min-width: 0;
+  font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.75;
+}
+.pw-json .k { color: var(--code-key); }
+.pw-json .s { color: var(--code-str); }
+.pw-json .l { color: var(--code-lit); }
+.pw-json .p { color: var(--code-punc); }
 
 @media (max-width: 900px) {
-  .hero { padding-block: 32px 0; }
-  .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .hero { padding-block: 32px 48px; }
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 8px; align-items: start; }
   .hero .wrap > div:first-child { padding-bottom: 0; }
-  .hero-photo { width: min(330px, 78%); }
-  .hero-visual .stage { width: min(360px, 92%); }
-  .fc { font-size: 0.8125rem; padding: 7px 12px; }
-  .fc-5 { display: none; }
-  .response.mini { bottom: 28px; width: min(230px, 62%); }
+  .hero-visual { padding-top: 96px; max-width: 480px; }
+}
+@media (max-width: 480px) {
+  .hero-visual { padding-top: 120px; }
+  .pw-body { min-height: 176px; }
+  .pw-photo { width: 60%; left: 0; }
+  /* text sits above the faded right edge of the photo, so the JSON keeps its full width */
+  .pw-json { position: relative; z-index: 3; margin-left: 50%; font-size: 0.62rem; line-height: 1.7; padding: 14px 8px 16px 2px; }
+  .pw-head { font-size: 0.72rem; padding: 10px 12px; }
+}
+@media (max-width: 360px) {
+  .pw-head .verb { display: none; }   /* the head covers it at this width */
+  .pw-photo { width: 64%; }
+  .pw-json { font-size: 0.6rem; }
 }
 
 /* ---------- sections ---------- */
