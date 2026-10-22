@@ -162,18 +162,12 @@
         <span><span lang="en">2026 – present</span><span lang="vi">2026 – nay</span></span>
         <span class="private"><span lang="en">Source code is private while the thesis is in progress.</span><span lang="vi">Mã nguồn để riêng tư trong thời gian làm luận văn.</span></span>
       </div>
-      <p class="intro" lang="en">A system that reads citizens' facial expressions in videos recorded at public-service counters, to study how they relate to satisfaction with the service.</p>
-      <p class="intro" lang="vi">Hệ thống phân tích biểu cảm khuôn mặt của người dân trong video ghi tại quầy giao dịch hành chính, nhằm tìm hiểu mối liên hệ với mức độ hài lòng về dịch vụ.</p>
+      <p class="intro" lang="en">Citizen satisfaction with public services is usually measured with a survey after the visit. This thesis tests a complementary signal: facial expressions in the transaction video, and whether they relate to how satisfied people say they are.</p>
+      <p class="intro" lang="vi">Mức hài lòng của người dân với dịch vụ hành chính thường được đo bằng phiếu khảo sát sau giao dịch. Luận văn thử một tín hiệu bổ sung: biểu cảm khuôn mặt trong video giao dịch, và xem nó có liên hệ với mức hài lòng mà người dân đánh giá hay không.</p>
       <ul class="tags" aria-label="Tech stack">
         <li>Python</li><li>FastAPI</li><li>OpenCV</li><li>PyTorch</li><li>HTML/CSS/JS</li>
       </ul>
 
-      <div class="figures">
-        <div class="figure"><div class="num">35+</div><div class="label"><span lang="en">API endpoints</span><span lang="vi">API endpoint</span></div></div>
-        <div class="figure"><div class="num">6</div><div class="label"><span lang="en">emotion-recognition models compared</span><span lang="vi">mô hình nhận dạng cảm xúc được so sánh</span></div></div>
-        <div class="figure"><div class="num"><span lang="en">2.44×</span><span lang="vi">2,44×</span></div><div class="label"><span lang="en">faster face detection</span><span lang="vi">phát hiện khuôn mặt nhanh hơn</span></div></div>
-        <div class="figure"><div class="num">100+</div><div class="label"><span lang="en">automated tests</span><span lang="vi">bài kiểm thử tự động</span></div></div>
-      </div>
 
       <div class="sub">
         <h3><span lang="en">How it works</span><span lang="vi">Cách hoạt động</span></h3>
@@ -186,17 +180,50 @@
       </div>
 
       <div class="sub">
-        <h3><span lang="en">What I did</span><span lang="vi">Phần tôi làm</span></h3>
-        <ul class="did" lang="en">
-          <li>Built the backend with FastAPI: video upload, background processing and a web dashboard to view the results.</li>
-          <li>Compared 6 open-source emotion-recognition models on a public test set and on real video clips.</li>
-          <li>Wrote automated tests, and kept all processing on the local machine with no identity recognition to protect personal data.</li>
-        </ul>
-        <ul class="did" lang="vi">
-          <li>Xây dựng backend bằng FastAPI: tải video lên, xử lý chạy nền và dashboard web để xem kết quả.</li>
-          <li>So sánh 6 mô hình nhận dạng cảm xúc mã nguồn mở trên bộ dữ liệu kiểm thử công khai và trên video thực tế.</li>
-          <li>Viết kiểm thử tự động; toàn bộ xử lý chạy trên máy cục bộ và không nhận dạng danh tính, để bảo vệ dữ liệu cá nhân.</li>
-        </ul>
+        <h3><span lang="en">My contributions</span><span lang="vi">Đóng góp của tôi</span></h3>
+        <div class="contrib">
+          <article class="card">
+            <p class="stat"><b>35+</b><span><span lang="en">API endpoints</span><span lang="vi">API endpoint</span></span></p>
+            <h4><span lang="en">Backend &amp; API</span><span lang="vi">Backend &amp; API</span></h4>
+            <p class="desc" lang="en">Built the FastAPI backend: it receives videos, processes them in the background and serves the results to a web dashboard.</p>
+            <p class="desc" lang="vi">Xây dựng backend FastAPI: nhận video, xử lý chạy nền và trả kết quả cho dashboard web.</p>
+            <ul class="tags"><li>FastAPI</li><li>REST API</li><li>Background jobs</li></ul>
+          </article>
+          <article class="card">
+            <p class="stat"><b>6</b><span><span lang="en">models compared</span><span lang="vi">mô hình được so sánh</span></span></p>
+            <h4><span lang="en">Model evaluation</span><span lang="vi">Đánh giá mô hình</span></h4>
+            <p class="desc" lang="en">Compared six open-source emotion-recognition models on a standard dataset and on real video clips to choose a suitable one.</p>
+            <p class="desc" lang="vi">So sánh 6 mô hình nhận dạng cảm xúc mã nguồn mở trên bộ dữ liệu chuẩn và video thực tế để chọn giải pháp phù hợp.</p>
+            <ul class="tags"><li>PyTorch</li><li>ONNX Runtime</li><li>OpenCV</li></ul>
+          </article>
+          <article class="card">
+            <p class="stat"><b><span lang="en">2.44×</span><span lang="vi">2,44×</span></b><span><span lang="en">faster face detection</span><span lang="vi">phát hiện khuôn mặt nhanh hơn</span></span></p>
+            <h4><span lang="en">Performance</span><span lang="vi">Tối ưu hiệu năng</span></h4>
+            <p class="desc" lang="en">Sped up the face-detection step by sizing frames to the face, with the same face coverage.</p>
+            <p class="desc" lang="vi">Tăng tốc bước phát hiện khuôn mặt nhờ thu nhỏ khung hình theo cỡ khuôn mặt, độ phủ khuôn mặt giữ nguyên.</p>
+            <ul class="tags"><li>OpenCV</li><li>YuNet</li></ul>
+          </article>
+          <article class="card">
+            <p class="stat"><b>100+</b><span><span lang="en">automated tests</span><span lang="vi">bài kiểm thử tự động</span></span></p>
+            <h4><span lang="en">Quality &amp; privacy</span><span lang="vi">Chất lượng &amp; bảo mật</span></h4>
+            <p class="desc" lang="en">Tests run against a real server. All processing stays on the local machine, with no identity recognition.</p>
+            <p class="desc" lang="vi">Kiểm thử chạy trên máy chủ thật. Toàn bộ xử lý nằm trên máy cục bộ, không nhận dạng danh tính.</p>
+            <ul class="tags"><li>unittest</li><li>Privacy by design</li></ul>
+          </article>
+        </div>
+      </div>
+
+      <div class="notes">
+        <div class="note">
+          <p class="note-label"><span lang="en">Status</span><span lang="vi">Trạng thái</span></p>
+          <p lang="en">The full flow from video to report works end to end. Next step: collecting real field data.</p>
+          <p lang="vi">Hệ thống đã chạy trọn quy trình từ video đến báo cáo. Bước tiếp theo: thu thập dữ liệu thực tế.</p>
+        </div>
+        <div class="note">
+          <p class="note-label"><span lang="en">Key lesson</span><span lang="vi">Bài học lớn nhất</span></p>
+          <p lang="en">A high score on a standard dataset does not guarantee the same on real videos, so the models are also checked on real footage.</p>
+          <p lang="vi">Điểm cao trên bộ dữ liệu chuẩn chưa chắc đúng với video thực tế, nên các mô hình được kiểm chứng thêm trên video thật.</p>
+        </div>
       </div>
     </div>
   </section>
