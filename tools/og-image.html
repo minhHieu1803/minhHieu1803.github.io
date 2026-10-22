@@ -1,0 +1,45 @@
+<!doctype html>
+<!-- Source of assets/og-image.png (the link preview on LinkedIn, Zalo, Facebook).
+     Rebuild: open this file in Chrome at 1200x630 and take a screenshot, or run
+     chromium --headless --window-size=1200,630 --screenshot=assets/og-image.png tools/og-image.html -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+  :root { color-scheme: light; }
+  html, body { width: 1200px; height: 630px; margin: 0; overflow: hidden; background: #f4f6f9; }
+  .card {
+    box-sizing: border-box; width: 1200px; height: 630px; padding: 72px 76px;
+    display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: 44px; align-items: center;
+    background: #f4f6f9; color: #121a26;
+  }
+  .site { font-family: var(--font-mono); font-size: 22px; color: #4b5567; }
+  .name { font-family: var(--font-display); font-weight: 700; font-size: 64px; line-height: 1.05; letter-spacing: -0.02em; margin-top: 18px; color: #121a26; white-space: nowrap; }
+  .role { font-family: var(--font-display); font-weight: 600; font-size: 28px; color: #2149c4; margin-top: 14px; white-space: nowrap; }
+  .focus { font-family: var(--font-body); font-size: 24px; color: #4b5567; margin-top: 26px; line-height: 1.45; }
+  .response { font-size: 17px; line-height: 1.75; }
+  .response-head { font-size: 17px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div>
+      <div class="site">minhhieu1803.github.io</div>
+      <div class="name">Pham Minh Hieu</div>
+      <div class="role">Fresher Python Backend Developer</div>
+      <div class="focus">FastAPI · background jobs · computer vision · automated testing</div>
+    </div>
+    <div class="response">
+      <div class="response-head"><span class="verb">GET</span><span class="path">/api/v1/me</span><span class="code">200 OK</span></div>
+<pre><code><span class="p">{</span>
+  <span class="k">"role"</span><span class="p">:</span> <span class="s">"Backend (Fresher)"</span><span class="p">,</span>
+  <span class="k">"stack"</span><span class="p">: [</span><span class="s">"Python"</span><span class="p">,</span> <span class="s">"FastAPI"</span><span class="p">],</span>
+  <span class="k">"education"</span><span class="p">:</span> <span class="s">"M.Sc. IT, HUTECH"</span><span class="p">,</span>
+  <span class="k">"open_to_work"</span><span class="p">:</span> <span class="l">true</span>
+<span class="p">}</span></code></pre>
+    </div>
+  </div>
+</body>
+</html>

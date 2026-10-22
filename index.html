@@ -8,6 +8,11 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Pham Minh Hieu · Python Backend Developer">
 <meta property="og:description" content="Fresher Python backend developer. Master's thesis: a FastAPI service that runs a video emotion-recognition pipeline as background jobs.">
+<meta property="og:image" content="https://minhhieu1803.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pham Minh Hieu, Fresher Python Backend Developer">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#f4f6f9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0c1118" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -39,10 +44,26 @@
       <a href="#education"><span lang="en">Education</span><span lang="vi">Học vấn</span></a>
       <a href="#contact"><span lang="en">Contact</span><span lang="vi">Liên hệ</span></a>
     </nav>
-    <nav class="lang" aria-label="Language / Ngôn ngữ">
-      <a href="/" hreflang="en" data-lang-link="en">EN</a>
-      <a href="/vi/" hreflang="vi" data-lang-link="vi">VI</a>
-    </nav>
+    <div class="top-actions">
+      <a class="btn btn-sm" lang="en" href="/cv/PhamMinhHieu_CV_Python_Backend_EN.pdf" download>CV</a>
+      <a class="btn btn-sm" lang="vi" href="/cv/PhamMinhHieu_CV_Python_Backend_VI.pdf" download>CV</a>
+      <nav class="lang" aria-label="Language / Ngôn ngữ">
+        <a href="/" hreflang="en" data-lang-link="en">EN</a>
+        <a href="/vi/" hreflang="vi" data-lang-link="vi">VI</a>
+      </nav>
+      <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="sr-only"><span lang="en">Open menu</span><span lang="vi">Mở menu</span></span>
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path class="bars" d="M3 5.5h14M3 10h14M3 14.5h14"/><path class="close" d="M5 5l10 10M15 5 5 15"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <div class="wrap">
+      <a href="#project"><span lang="en">Project</span><span lang="vi">Dự án</span></a>
+      <a href="#skills"><span lang="en">Skills</span><span lang="vi">Kỹ năng</span></a>
+      <a href="#education"><span lang="en">Education</span><span lang="vi">Học vấn</span></a>
+      <a href="#contact"><span lang="en">Contact</span><span lang="vi">Liên hệ</span></a>
+    </div>
   </div>
 </header>
 
@@ -69,11 +90,8 @@
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 2v8m0 0 3.2-3.2M8 10 4.8 6.8M2.5 13.5h11" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Tải CV
           </a>
-          <a class="btn" href="#project"><span lang="en">See the thesis project</span><span lang="vi">Xem dự án luận văn</span></a>
-          <a class="btn" href="https://github.com/minhHieu1803" target="_blank" rel="noopener">
-            GitHub
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 11 11 5m0 0H6m5 0v5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+          <a class="text-link" href="#project"><span lang="en">See the thesis project</span><span lang="vi">Xem dự án luận văn</span> <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="https://github.com/minhHieu1803" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
         </div>
       </div>
 
@@ -103,8 +121,12 @@
       <div class="meta">
         <span><span lang="en">Master's thesis · HUTECH</span><span lang="vi">Luận văn Thạc sĩ · HUTECH</span></span>
         <span><span lang="en">2026 – present</span><span lang="vi">2026 – nay</span></span>
-        <span class="private"><span lang="en">Source code is private while the thesis is in progress. Happy to walk through it in an interview.</span><span lang="vi">Mã nguồn để riêng tư trong thời gian làm luận văn. Tôi sẵn sàng trình bày chi tiết khi phỏng vấn.</span></span>
+        <span class="private"><span lang="en">Source code is private while the thesis is in progress.</span><span lang="vi">Mã nguồn để riêng tư trong thời gian làm luận văn.</span></span>
       </div>
+      <p class="request">
+        <a class="btn btn-sm" lang="en" href="mailto:phamhieu5434@gmail.com?subject=Code%20walkthrough%20request%3A%20emotion%20recognition%20thesis">Request a code walkthrough</a>
+        <a class="btn btn-sm" lang="vi" href="mailto:phamhieu5434@gmail.com?subject=Y%C3%AAu%20c%E1%BA%A7u%20xem%20code%3A%20lu%E1%BA%ADn%20v%C4%83n%20nh%E1%BA%ADn%20d%E1%BA%A1ng%20c%E1%BA%A3m%20x%C3%BAc">Yêu cầu xem code</a>
+      </p>
       <p class="intro" lang="en">Transactions at one-stop public-service counters are recorded on video, with the participants' consent. The system finds the citizen's face in sampled frames, estimates their facial expression, builds an emotion timeline for each session, and tests whether those patterns relate to the citizen's satisfaction score.</p>
       <p class="intro" lang="vi">Các giao dịch tại quầy một cửa được ghi hình với sự đồng ý của người tham gia. Hệ thống tìm khuôn mặt công dân trong các khung hình được lấy mẫu, nhận dạng biểu hiện cảm xúc, dựng dòng thời gian cảm xúc cho từng phiên và kiểm định xem các đặc trưng này có liên hệ với điểm hài lòng của công dân hay không.</p>
       <ul class="tags" aria-label="Tech stack">

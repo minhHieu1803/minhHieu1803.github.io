@@ -24,6 +24,8 @@ assets/js/main.js   language links and copy-to-clipboard
 assets/favicon.svg
 cv/                 CV PDFs
 tools/make_vi.py    rebuilds vi/index.html from index.html
+tools/og-image.html source of assets/og-image.png, the link preview image
+404.html            page for unknown links (English or Vietnamese by path)
 netlify.toml        settings for an optional Netlify deploy
 ```
 

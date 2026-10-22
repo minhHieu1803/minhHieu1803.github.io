@@ -1,4 +1,4 @@
-// Language links and copy-to-clipboard. The page language comes from the URL (/ or /vi/), set by the inline script in <head>.
+// Language links, mobile menu and copy-to-clipboard. The page language comes from the URL (/ or /vi/), set by the inline script in <head>.
 (function () {
   var root = document.documentElement;
   var lang = root.getAttribute("data-lang");
@@ -10,6 +10,23 @@
       if (location.hash) a.setAttribute("href", a.getAttribute("href").split("#")[0] + location.hash);
     });
   });
+
+  var menuBtn = document.getElementById("menu-btn");
+  var menu = document.getElementById("mobile-menu");
+  if (menuBtn && menu) {
+    var setMenu = function (open) {
+      menu.hidden = !open;
+      menuBtn.setAttribute("aria-expanded", String(open));
+    };
+    menuBtn.addEventListener("click", function () { setMenu(menu.hidden); });
+    menu.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !menu.hidden) { setMenu(false); menuBtn.focus(); }
+    });
+    var wide = window.matchMedia("(min-width: 761px)");
+    var onWide = function (e) { if (e.matches) setMenu(false); };
+    if (wide.addEventListener) wide.addEventListener("change", onWide); else wide.addListener(onWide);
+  }
 
   function selectText(el) {
     if (!el) return;

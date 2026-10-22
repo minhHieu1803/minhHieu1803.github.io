@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>404 · Pham Minh Hieu</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<script>
+  (function () {
+    var lang = /^\/vi(\/|$)/.test(location.pathname) ? "vi" : "en";
+    document.documentElement.setAttribute("data-lang", lang);
+    document.documentElement.lang = lang;
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+  .notfound { padding-block: 72px; }
+  .notfound .wrap { display: grid; gap: 28px; max-width: 760px; }
+  .notfound h1 { font-size: var(--step-4); }
+  .notfound p { color: var(--ink-2); font-size: var(--step-1); }
+  .notfound .response-head .code { color: #f2a07b; }
+  .notfound .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+</style>
+</head>
+<body>
+<main class="notfound">
+  <div class="wrap">
+    <div class="response">
+      <div class="response-head"><span class="verb">GET</span><span class="path" id="req-path">/</span><span class="code">404 Not Found</span></div>
+<pre><code><span class="p">{</span>
+  <span class="k">"status"</span><span class="p">:</span> <span class="l">404</span><span class="p">,</span>
+  <span class="k">"error"</span><span class="p">:</span> <span class="s">"Not Found"</span>
+<span class="p">}</span></code></pre>
+    </div>
+    <h1><span lang="en">This page doesn't exist</span><span lang="vi">Trang này không tồn tại</span></h1>
+    <p lang="en">The link may be mistyped or out of date. The portfolio itself is one click away.</p>
+    <p lang="vi">Đường dẫn có thể bị gõ sai hoặc đã cũ. Bạn có thể quay lại trang portfolio ngay.</p>
+    <div class="actions">
+      <a class="btn primary" lang="en" href="/">Back to the portfolio</a>
+      <a class="btn primary" lang="vi" href="/vi/">Về trang portfolio</a>
+      <a class="text-link" lang="en" href="/vi/">Bản tiếng Việt</a>
+      <a class="text-link" lang="vi" href="/">English version</a>
+    </div>
+  </div>
+</main>
+<script>
+  (function () {
+    var el = document.getElementById("req-path");
+    if (el) el.textContent = location.pathname;
+  })();
+</script>
+</body>
+</html>
